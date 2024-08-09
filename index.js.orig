@@ -31,7 +31,7 @@ function assign(target, objects) {
 
 function extend(target, obj) {
   for (var key in obj) {
-    if (key !== '__proto__' && hasOwn(obj, key)) {
+    if (hasOwn(obj, key)) {
       var val = obj[key];
       if (lazy.typeOf(val) === 'object') {
         target[key] = extend(target[key] || {}, val);
